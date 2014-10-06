@@ -1,0 +1,27 @@
+{
+    "name": "Loads Blooie live on any page",
+    "version": "1.1",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "web_accessible_resources": [
+        "blooie.html"
+    ],
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": ["js/loadEmbed.js"]
+    }],
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_security_policy": "script-src 'self' https://app.bloo.ie; object-src 'self'",
+    "browser_action": {
+        "name": "Load Blooie",
+        "default_icon": "images/icon.png"
+    },
+    "manifest_version": 6
+}
